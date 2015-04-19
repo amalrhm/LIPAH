@@ -99,7 +99,19 @@ class Membre
      *  @ORM\OneToMany(targetEntity="Cours", mappedBy="membre", cascade={"remove", "persist"})
     */
     protected $cours;
-    
+     /**
+     *  @ORM\OneToMany(targetEntity="Master", mappedBy="membre", cascade={"remove", "persist"})
+    */
+    protected $masters;
+     /**
+     *  @ORM\OneToMany(targetEntity="Diplome", mappedBy="membre", cascade={"remove", "persist"})
+    */
+    protected $diplomes;
+     /**
+     * @ORM\ManyToOne(targetEntity="Etablissement", inversedBy="membres")
+     *  @ORM\JoinColumn(name="idEtab", referencedColumnName="idEtab")
+     */
+    protected $etab;
     
     public function setCin($cin)
     {
@@ -447,7 +459,7 @@ class Membre
      * @param \AuthentBundle\Entity\These $listeDesTheses
      * @return Membre
      */
-    public function addListeDesThesis(\AuthentBundle\Entity\These $listeDesTheses)
+    public function addListeDesTheses(\AuthentBundle\Entity\These $listeDesTheses)
     {
         $this->listeDesTheses[] = $listeDesTheses;
 
@@ -472,5 +484,140 @@ class Membre
     public function getListeDesTheses()
     {
         return $this->listeDesTheses;
+    }
+
+    /**
+     * Add listeDesTheses
+     *
+     * @param \AuthentBundle\Entity\These $listeDesTheses
+     * @return Membre
+     */
+    public function addListeDesThesis(\AuthentBundle\Entity\These $listeDesTheses)
+    {
+        $this->listeDesTheses[] = $listeDesTheses;
+    
+        return $this;
+    }
+
+    /**
+     * Add cours
+     *
+     * @param \AuthentBundle\Entity\Cours $cours
+     * @return Membre
+     */
+    public function addCour(\AuthentBundle\Entity\Cours $cours)
+    {
+        $this->cours[] = $cours;
+    
+        return $this;
+    }
+
+    /**
+     * Remove cours
+     *
+     * @param \AuthentBundle\Entity\Cours $cours
+     */
+    public function removeCour(\AuthentBundle\Entity\Cours $cours)
+    {
+        $this->cours->removeElement($cours);
+    }
+
+    /**
+     * Get cours
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCours()
+    {
+        return $this->cours;
+    }
+
+    /**
+     * Add masters
+     *
+     * @param \AuthentBundle\Entity\Master $masters
+     * @return Membre
+     */
+    public function addMaster(\AuthentBundle\Entity\Master $masters)
+    {
+        $this->masters[] = $masters;
+    
+        return $this;
+    }
+
+    /**
+     * Remove masters
+     *
+     * @param \AuthentBundle\Entity\Master $masters
+     */
+    public function removeMaster(\AuthentBundle\Entity\Master $masters)
+    {
+        $this->masters->removeElement($masters);
+    }
+
+    /**
+     * Get masters
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMasters()
+    {
+        return $this->masters;
+    }
+
+    /**
+     * Add diplomes
+     *
+     * @param \AuthentBundle\Entity\Diplome $diplomes
+     * @return Membre
+     */
+    public function addDiplome(\AuthentBundle\Entity\Diplome $diplomes)
+    {
+        $this->diplomes[] = $diplomes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove diplomes
+     *
+     * @param \AuthentBundle\Entity\Diplome $diplomes
+     */
+    public function removeDiplome(\AuthentBundle\Entity\Diplome $diplomes)
+    {
+        $this->diplomes->removeElement($diplomes);
+    }
+
+    /**
+     * Get diplomes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDiplomes()
+    {
+        return $this->diplomes;
+    }
+
+    /**
+     * Set etab
+     *
+     * @param \AuthentBundle\Entity\Etablissement $etab
+     * @return Membre
+     */
+    public function setEtab(\AuthentBundle\Entity\Etablissement $etab = null)
+    {
+        $this->etab = $etab;
+    
+        return $this;
+    }
+
+    /**
+     * Get etab
+     *
+     * @return \AuthentBundle\Entity\Etablissement 
+     */
+    public function getEtab()
+    {
+        return $this->etab;
     }
 }

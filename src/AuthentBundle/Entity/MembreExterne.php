@@ -328,4 +328,9 @@ class MembreExterne{
     {
         return $this->listeDesTheses;
     }
+    /**
+     * @ORM\ManyToOne(targetEntity="Labo", inversedBy="membres")
+     *  @ORM\JoinColumn(name="idLabo", referencedColumnName="idLabo")
+     */
+    protected $labo;
 }

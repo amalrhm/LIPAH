@@ -314,4 +314,9 @@ class These {
     {
         return $this->listeDesMembresExternes;
     }
+     /**
+     * @ORM\ManyToOne(targetEntity="Inscription", inversedBy="theses")
+     *  @ORM\JoinColumn(name="idInscri", referencedColumnName="idInscri")
+     */
+    protected $inscri;
 }
