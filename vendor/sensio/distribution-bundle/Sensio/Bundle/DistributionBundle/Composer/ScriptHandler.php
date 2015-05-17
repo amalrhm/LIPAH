@@ -94,6 +94,29 @@ class ScriptHandler
     }
 
     /**
+     * Sets up deployment target specific features.
+     * Could be custom web server configs, boot command files etc.
+     *
+     * @param $event CommandEvent An instance
+     */
+    public static function prepareDeploymentTarget(CommandEvent $event)
+    {
+        self::prepareDeploymentTargetHeroku($event);
+    }
+
+    protected static function prepareDeploymentTargetHeroku(CommandEvent $event)
+    {
+        $options = self::getOptions($event);
+        if (($stack = getenv('STACK')) && ($stack == 'cedar' || $stack == 'cedar-14')) {
+            $fs = new Filesystem();
+            if (!$fs->exists('Procfile')) {
+                $event->getIO()->write('Heroku deploy detected; creating default Procfile for "web" dyno');
+                $fs->dumpFile('Procfile', sprintf('web: $(composer config bin-dir)/heroku-php-apache2 %s/', $options['symfony-web-dir']));
+            }
+        }
+    }
+
+    /**
      * Clears the Symfony cache.
      *
      * @param $event CommandEvent A instance
@@ -382,14 +405,20 @@ EOF;
             $autoloadDir = $fs->makePathRelative($autoloadDir, $bootstrapDir);
         }
 
-        file_put_contents($file, sprintf("<?php
+        file_put_contents($file, sprintf(<<<'EOF'
+<?php
 
-namespace { \$loader = require_once __DIR__.'/".$autoloadDir."autoload.php'; }
+namespace {
+    error_reporting(error_reporting() & ~E_USER_DEPRECATED);
+    $loader = require_once __DIR__.'/%sautoload.php';
+}
 
 %s
 
-namespace { return \$loader; }
-            ", $bootstrapContent));
+namespace { return $loader; }
+
+EOF
+            , $autoloadDir, $bootstrapContent));
     }
 
     protected static function executeCommand(CommandEvent $event, $consoleDir, $cmd, $timeout = 300)
