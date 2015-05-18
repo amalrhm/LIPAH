@@ -1,0 +1,3 @@
+users_list:
+    pattern:  /users/
+    defaults: { _controller: AuthentBundle:Default:index }

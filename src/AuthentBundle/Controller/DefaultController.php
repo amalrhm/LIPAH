@@ -16,4 +16,15 @@ class DefaultController extends Controller
     {
         return array();
     }
+    public function showAction() {
+        $users = $this->getDoctrine()
+            ->getRepository('UserBundle:User')
+            ->findAll();
+      if (!$users) {
+        throw $this->createNotFoundException('No users found');
+      }
+  
+      $build['users'] = $users;
+      return $this->render('AuthentBundle:Default:index.html.twig', $build);
+    }
 }

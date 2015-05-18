@@ -123,19 +123,19 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
     <div class=\"container\" id=\"about\" name=\"about\">
         <div class=\"row white\">
             <br>
-            <h1 class=\"centered\">Département de Génie Informatique et Mathématiques</h1>
+            <h1 class=\"centered\">Laboratoire Informatique LIPAH</h1>
             <hr>
 
             <div class=\"col-lg-6\" align=\"center\">
                 <p><img src=\"";
         // line 91
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/departement.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/Labo.jpg"), "html", null, true);
         echo "\" width=60%></p>
             </div><!-- col-lg-6 -->
 
             <div class=\"col-lg-6\" align=\"justify\">
-                <p>Le département Génie Informatique et Mathématiques est l’un des quatre départements de l’INSAT. Ses activités consistent à mobiliser et gérer les ressources nécessaires pour l’enseignement des disciplines informatique et mathématiques durant le cursus des élèves ingénieurs de l’INSAT. Par ailleurs, le département participe au développement de travaux de recherche, à la gestion des stages et à la mise en place ainsi qu'au bon déroulement des mastères de recherche et professionnels.
-                </p>
+                <p>LIPAH est le labo informatique de l'INSAT. C'est votre moyen pour rester en contact avec voc collèges et pour organiser votre environnement de travail. Devenez membre et profitez de tout notre site en un seul clic! 
+               </p>
             </div><!-- col-lg-6 -->
         </div><!-- row -->
     </div><!-- container -->
@@ -193,20 +193,20 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
         <br>
 
         <div class=\"row white centered\">
-            <h1 class=\"centered\">CORPS ENSEIGNANT</h1>
+            <h1 class=\"centered\">Explorez les membres du Labo</h1>
             <hr>
             <br>
 
-            <h2> Chef de département</h2>
+            <h2> Administrateur </h2>
 
 
             <div class=\"col-lg-15 centered\">
                 <img class=\"img img-circle\" src=\"";
         // line 159
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team01.jpg"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team01.JPG"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
 
-                <h4><b>Faten Chaieb</b></h4>
+                <h4><b>Amal RHOUMA</b></h4>
                 <a href=\"#\" class=\"icon icon-twitter\"></a>
                 <a href=\"#\" class=\"icon icon-facebook\"></a>
                 <a href=\"#\" class=\"icon icon-envelop\"></a>
@@ -225,8 +225,22 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
-                <h4><b>Tim Davies</b></h4>
-                <a href=\"#\" class=\"icon icon-twitter\"></a>
+                ";
+        // line 177
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["users"]) ? $context["users"] : $this->getContext($context, "users")));
+        foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
+            // line 178
+            echo "                    <h4><b>";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["user"], "name", array()), "html", null, true);
+            echo "</b></h4>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 180
+        echo "                <a href=\"#\" class=\"icon icon-twitter\"></a>
                 <a href=\"#\" class=\"icon icon-facebook\"></a>
                 <a href=\"#\" class=\"icon icon-envelop\"></a>
 
@@ -234,7 +248,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 185
+        // line 187
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team03.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -247,7 +261,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 195
+        // line 197
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team04.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -259,7 +273,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
             </div><!-- col-lg-3 -->
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 204
+        // line 206
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -280,7 +294,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 222
+        // line 224
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -293,7 +307,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 232
+        // line 234
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team03.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -306,7 +320,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 242
+        // line 244
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team04.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -318,7 +332,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
             </div><!-- col-lg-3 -->
             <div class=\"col-lg-3 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 251
+        // line 253
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -339,7 +353,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-2 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 269
+        // line 271
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -352,7 +366,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-2 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 279
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team03.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -365,7 +379,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
             <div class=\"col-lg-2 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 289
+        // line 291
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team04.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -377,7 +391,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
             </div><!-- col-lg-3 -->
             <div class=\"col-lg-2 centered\">
                 <img class=\"img img-circle\" src=\"";
-        // line 298
+        // line 300
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team02.jpg"), "html", null, true);
         echo "\" height=\"120px\" width=\"120px\" alt=\"\">
                 <br>
@@ -397,7 +411,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
             <div class=\"row\">
                 <div class=\"col-lg-8 centered\">
                     <img class=\"img-responsive\" src=\"";
-        // line 315
+        // line 317
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/macbook.png"), "html", null, true);
         echo "\" align=\"\">
                 </div>
@@ -439,7 +453,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 354
+        // line 356
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio01.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -463,7 +477,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                             </div>
                             <div class=\"modal-body\">
                                 <p><img class=\"img-responsive\" src=\"";
-        // line 375
+        // line 377
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio01.jpg"), "html", null, true);
         echo "\" alt=\"\"></p>
                                 <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
@@ -482,7 +496,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 391
+        // line 393
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio02.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -498,7 +512,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 404
+        // line 406
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio03.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -516,7 +530,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 419
+        // line 421
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio04.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -532,7 +546,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 432
+        // line 434
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio05.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -548,7 +562,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                     <div class=\"grid mask\">
                         <figure>
                             <img class=\"img-responsive\" src=\"";
-        // line 445
+        // line 447
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/portfolio/folio06.jpg"), "html", null, true);
         echo "\" alt=\"\">
                             <figcaption>
@@ -589,7 +603,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                 <div class=\"col-lg-4 centered\">
                     <br>
                     <p><img class=\"img img-circle\" src=\"";
-        // line 483
+        // line 485
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team04.jpg"), "html", null, true);
         echo "\" width=\"60px\" height=\"60px\"></p>
                     <h4>Jaye Smith</h4>
@@ -608,7 +622,7 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
                 <div class=\"col-lg-4 centered\">
                     <br>
                     <p><img class=\"img img-circle\" src=\"";
-        // line 499
+        // line 501
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/team/team03.jpg"), "html", null, true);
         echo "\" width=\"60px\" height=\"60px\"></p>
                     <h4>Michele Lampa</h4>
@@ -713,6 +727,6 @@ class __TwigTemplate_a004e2ab33bd119a54ab839a7869d41f46e59656eac3e88900730921871
 
     public function getDebugInfo()
     {
-        return array (  612 => 499,  593 => 483,  552 => 445,  536 => 432,  520 => 419,  502 => 404,  486 => 391,  467 => 375,  443 => 354,  401 => 315,  381 => 298,  369 => 289,  356 => 279,  343 => 269,  322 => 251,  310 => 242,  297 => 232,  284 => 222,  263 => 204,  251 => 195,  238 => 185,  225 => 175,  206 => 159,  175 => 131,  132 => 91,  91 => 52,  71 => 30,  63 => 25,  55 => 20,  38 => 5,  35 => 4,  29 => 2,  11 => 1,);
+        return array (  626 => 501,  607 => 485,  566 => 447,  550 => 434,  534 => 421,  516 => 406,  500 => 393,  481 => 377,  457 => 356,  415 => 317,  395 => 300,  383 => 291,  370 => 281,  357 => 271,  336 => 253,  324 => 244,  311 => 234,  298 => 224,  277 => 206,  265 => 197,  252 => 187,  243 => 180,  234 => 178,  230 => 177,  225 => 175,  206 => 159,  175 => 131,  132 => 91,  91 => 52,  71 => 30,  63 => 25,  55 => 20,  38 => 5,  35 => 4,  29 => 2,  11 => 1,);
     }
 }

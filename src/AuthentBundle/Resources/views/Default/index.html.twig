@@ -84,16 +84,16 @@
     <div class="container" id="about" name="about">
         <div class="row white">
             <br>
-            <h1 class="centered">Département de Génie Informatique et Mathématiques</h1>
+            <h1 class="centered">Laboratoire Informatique LIPAH</h1>
             <hr>
 
             <div class="col-lg-6" align="center">
-                <p><img src="{{ asset('img/departement.jpg') }}" width=60%></p>
+                <p><img src="{{ asset('img/Labo.jpg') }}" width=60%></p>
             </div><!-- col-lg-6 -->
 
             <div class="col-lg-6" align="justify">
-                <p>Le département Génie Informatique et Mathématiques est l’un des quatre départements de l’INSAT. Ses activités consistent à mobiliser et gérer les ressources nécessaires pour l’enseignement des disciplines informatique et mathématiques durant le cursus des élèves ingénieurs de l’INSAT. Par ailleurs, le département participe au développement de travaux de recherche, à la gestion des stages et à la mise en place ainsi qu'au bon déroulement des mastères de recherche et professionnels.
-                </p>
+                <p>LIPAH est le labo informatique de l'INSAT. C'est votre moyen pour rester en contact avec voc collèges et pour organiser votre environnement de travail. Devenez membre et profitez de tout notre site en un seul clic! 
+               </p>
             </div><!-- col-lg-6 -->
         </div><!-- row -->
     </div><!-- container -->
@@ -148,17 +148,17 @@
         <br>
 
         <div class="row white centered">
-            <h1 class="centered">CORPS ENSEIGNANT</h1>
+            <h1 class="centered">Explorez les membres du Labo</h1>
             <hr>
             <br>
 
-            <h2> Chef de département</h2>
+            <h2> Administrateur </h2>
 
 
             <div class="col-lg-15 centered">
-                <img class="img img-circle" src="{{ asset('img/team/team01.jpg') }}" height="120px" width="120px" alt="">
+                <img class="img img-circle" src="{{ asset('img/team/team01.JPG') }}" height="120px" width="120px" alt="">
 
-                <h4><b>Faten Chaieb</b></h4>
+                <h4><b>Amal RHOUMA</b></h4>
                 <a href="#" class="icon icon-twitter"></a>
                 <a href="#" class="icon icon-facebook"></a>
                 <a href="#" class="icon icon-envelop"></a>
@@ -174,7 +174,9 @@
             <div class="col-lg-3 centered">
                 <img class="img img-circle" src="{{ asset('img/team/team02.jpg') }}" height="120px" width="120px" alt="">
                 <br>
-                <h4><b>Tim Davies</b></h4>
+                {% for user in users %}
+                    <h4><b>{{ user.name}}</b></h4>
+                {% endfor %}
                 <a href="#" class="icon icon-twitter"></a>
                 <a href="#" class="icon icon-facebook"></a>
                 <a href="#" class="icon icon-envelop"></a>

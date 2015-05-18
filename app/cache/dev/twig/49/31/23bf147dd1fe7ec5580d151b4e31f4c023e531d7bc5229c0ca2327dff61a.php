@@ -35,7 +35,7 @@ class __TwigTemplate_493123bf147dd1fe7ec5580d151b4e31f4c023e531d7bc5229c0ca2327d
                             <li><a href=\"#formation\" class=\"smoothScroll\"> Cours</a></li>
                             <li><a href=\"#certif\" class=\"smoothScroll\"> Certifications</a></li>
                         </ul>-->
-                        <a href=\"#home\" class=\"smoothScroll\">Profil</a>
+                        <a href=\"#team\" class=\"smoothScroll\">Profil</a>
                     </li>
                     <li> <a href=\"#team\" class=\"smoothScroll\">Projets</a></li>
                     <li> <a href=\"#events\" class=\"smoothScroll\">Diplomes</a></li>
@@ -46,46 +46,45 @@ class __TwigTemplate_493123bf147dd1fe7ec5580d151b4e31f4c023e531d7bc5229c0ca2327d
                             <li> <a href=\"#admin\" class=\"smoothScroll\"> Papiers scientifiques</a></li>
                             <li> <a href=\"#admin\" class=\"smoothScroll\"> Cours</a></li>
                         </ul>
-                    <li> <a href=\"#admin\" class=\"smoothScroll\"> Admin</a></li>
                     <li> <a href=\"#contact\" class=\"smoothScroll\"> Contact</a></li>
                     <li> <a href=\"#about\" class=\"smoothScroll\"> A Propos</a></li>
 
 
                     <div class=\"navbar-form navbar-right\" style=\"margin-top: 15px; color:#ffffff\">
                         ";
-        // line 37
+        // line 36
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 38
+            // line 37
             echo "                            <span class=\"glyphicon glyphicon-log-out\"></span>
                             <a href=\"";
-            // line 39
+            // line 38
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\">
                                 ";
-            // line 40
+            // line 39
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
             echo "
                                 <span class=\"glyphicon glyphicon-user\"></span> ";
-            // line 41
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "
                             </a>
                         ";
         } else {
-            // line 44
+            // line 43
             echo "                            <span class=\"glyphicon glyphicon-log-in\"></span>
                             <a href=\"";
-            // line 45
+            // line 44
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\">
                                 ";
-            // line 46
+            // line 45
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.login", array(), "FOSUserBundle"), "html", null, true);
             echo "
                             </a>
                         ";
         }
-        // line 49
+        // line 48
         echo "                    </div>
 
             </div><!--/.nav-collapse -->
@@ -106,6 +105,6 @@ class __TwigTemplate_493123bf147dd1fe7ec5580d151b4e31f4c023e531d7bc5229c0ca2327d
 
     public function getDebugInfo()
     {
-        return array (  89 => 49,  83 => 46,  79 => 45,  76 => 44,  70 => 41,  66 => 40,  62 => 39,  59 => 38,  57 => 37,  19 => 1,);
+        return array (  88 => 48,  82 => 45,  78 => 44,  75 => 43,  69 => 40,  65 => 39,  61 => 38,  58 => 37,  56 => 36,  19 => 1,);
     }
 }
